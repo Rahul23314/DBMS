@@ -1,17 +1,24 @@
 import React from 'react';
 import Check from './Check';
-import BackgroundImage from '../assets/Background.jpg'; // Import the background image
+import Video from '../assets/video2.mp4'; // Import the background video
 
 const backgroundStyle = {
-  backgroundImage: `url(${BackgroundImage})`, // Apply the background image
-  backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  minHeight: '100vh',
+  position: 'fixed',
+  width: '100%',
+  height: '100%',
+  top: 0,
+  left: 0,
+  zIndex: -1,
+  objectFit: 'cover',
 };
 
 export default function Deadstock() {
   return (
-    <div style={backgroundStyle}> {/* Apply background style here */}
+    <div style={{ position: 'relative' }}>
+      <video autoPlay loop muted style={backgroundStyle}>
+        <source src={Video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
       <Check />
     </div>
   );
